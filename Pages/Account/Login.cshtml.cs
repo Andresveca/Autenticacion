@@ -9,13 +9,23 @@ namespace Autenticacion.Pages.Account
         [BindProperty]
         public User User { get; set; }
 
-        public void onGet()
+        public void OnGet()
         {
         }
 
-        public void OnPost() 
+        /*public void OnPost() 
         {
-			Console.WriteLine("User: " + User.Email + "Password: " + User.Password);
-		}
+			Console.WriteLine("User: " + User.Email + " Password: " + User.Password);
+		}*/
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid) return Page();
+
+            if (User.Email == "Correo@gmail.com" && User.Password == "Andres")
+            { 
+                return RedirectToPage("/Index");
+            }
+            return Page();
+        }
     }
 }
