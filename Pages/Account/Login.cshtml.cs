@@ -11,7 +11,11 @@ namespace Autenticacion.Pages.Account
 
         public void onGet()
         {
-            Console.WriteLine("User: " + User.Email + "Password: " + User.Password);
         }
+
+        public void OnPost() 
+        {
+			Console.WriteLine("User: " + User.Email + "Password: " + User.Password);
+		}
     }
 }
