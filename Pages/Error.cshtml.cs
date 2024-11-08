@@ -1,10 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Diagnostics;
 
 namespace Autenticacion.Pages
 {
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+	[Authorize]
+	[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     [IgnoreAntiforgeryToken]
     public class ErrorModel : PageModel
     {
